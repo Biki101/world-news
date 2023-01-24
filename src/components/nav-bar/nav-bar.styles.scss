@@ -1,0 +1,39 @@
+.top-bar {
+  background-color: black;
+
+  .top-bar-content {
+    color: white;
+
+    .up-nav-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .up-nav-links {
+        display: flex;
+      }
+
+      // location
+      .up-nav-links .location span {
+        margin-right: 10px;
+      }
+
+      // logo
+      .up-nav-logo {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+.sign-up-nav {
+  margin-left: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
