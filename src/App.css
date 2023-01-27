@@ -8,6 +8,10 @@
   --primary: rgb(36, 200, 36);
 }
 
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
 .container {
   width: 1080px;
   margin: auto;
@@ -21,4 +25,9 @@
   color: var(--primary);
   transition: all 1s ease-in-out 0.2s;
   text-decoration: underline;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 20px 0px;
 }

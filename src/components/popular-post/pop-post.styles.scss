@@ -1,0 +1,17 @@
+.popular-post {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "img h4" "img span";
+}
+
+#foot-img {
+  grid-area: img;
+}
+
+#foot-span {
+  grid-area: span;
+}
+
+#foot-h4 {
+  grid-area: h4;
+}
