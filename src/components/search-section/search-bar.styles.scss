@@ -1,0 +1,29 @@
+.search-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .breadcrumb {
+    padding-top: 2px;
+  }
+
+  .search-bar {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    input {
+      flex-grow: 1;
+      outline: none;
+      padding: 10px;
+      //   border-radius: 10px;
+    }
+    .search-icon {
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+  }
+}

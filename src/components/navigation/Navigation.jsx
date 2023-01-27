@@ -17,7 +17,7 @@ const Navigation = () => {
           value={value}
           onChange={handleChange}
           textColor="primary"
-          indicatorColor="primary"
+          indicatorColor="secondary"
           aria-label="secondary tabs example"
         >
           <Tab value="one" label="Home" />
