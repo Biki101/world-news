@@ -1,0 +1,36 @@
+.connection-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.connection-item {
+  display: flex;
+  margin: 10px 0px;
+  align-items: center;
+  justify-content: space-between;
+
+  .follower-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+
+  #fb {
+    color: #0072ff;
+  }
+
+  #twt {
+    color: #00a1ffcc;
+  }
+
+  #yt {
+    color: red;
+  }
+}

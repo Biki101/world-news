@@ -1,3 +1,10 @@
+.home-pop-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .home-pop-container ul {
   display: flex;
   flex-direction: column;
@@ -11,6 +18,12 @@
     align-items: center;
     text-align: justify;
   }
+}
+
+.home-pop-img {
+  border: 2px solid black;
+  width: 100%;
+  height: 600px;
 }
 
 // #home-pop-title img {

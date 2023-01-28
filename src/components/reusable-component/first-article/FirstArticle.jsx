@@ -2,7 +2,6 @@ import React from "react";
 import "./first-article.scss";
 
 const FirstArticle = (props) => {
-  console.log(props.article);
   const title = props.article.title;
   const dateString = props.article.published_date;
   const imgUrl = props.article.media[0];
