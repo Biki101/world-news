@@ -21,8 +21,8 @@ const Navigation = () => {
           aria-label="secondary tabs example"
         >
           <Tab value="one" label="Home" />
+          <Tab value="three" label="Global" />
           <Tab value="two" label="Most popular" />
-          <Tab value="three" label="Continent" />
           <Tab value="four" label="Sports" />
           <Tab value="five" label="Celibrities" />
           <Tab value="six" label="Movie" />

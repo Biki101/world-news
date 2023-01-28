@@ -1,0 +1,19 @@
+.news-category-container {
+  margin: 10px;
+  text-align: justify;
+
+  .category-title {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 4px 7px;
+    margin-bottom: 10px;
+  }
+
+  .wel-news-title {
+    font-size: 1.1rem;
+  }
+
+  .wel-news-date {
+    margin-top: 5px;
+  }
+}

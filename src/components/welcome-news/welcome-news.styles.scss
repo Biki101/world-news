@@ -1,0 +1,26 @@
+.welcome-news {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+  height: 500px;
+
+  .welcome-gallery {
+    border: 1px solid black;
+    background-image: url("../../img//testing.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+  }
+}
+
+#sports {
+  grid-row: 1/3;
+}
+#celebrities {
+  grid-column: 2/4;
+}

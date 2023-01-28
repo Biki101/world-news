@@ -23,7 +23,7 @@ function App() {
       <div className="App">
         <NavBar />
         <SearchBar />
-        {/* <HomePage /> */}
+        <HomePage />
         <Footer />
       </div>
     </ThemeProvider>

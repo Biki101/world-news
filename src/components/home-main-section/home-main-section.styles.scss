@@ -1,0 +1,26 @@
+.main-section-container {
+  margin-top: 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "global global popular" "sports sports popular" "books books popular";
+
+  .main-section-item {
+    // border: 2px solid black;
+  }
+}
+
+#main-global {
+  grid-area: global;
+}
+
+#main-sports {
+  grid-area: sports;
+}
+
+#main-popular {
+  grid-area: popular;
+}
+
+#main-books {
+  grid-area: books;
+}
