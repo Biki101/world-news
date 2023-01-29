@@ -9,7 +9,11 @@ const MainSectionContent = (props) => {
   return (
     <div className="main-section-content-container">
       <div className="first-content">
-        {articles.length > 0 ? <FirstArticle article={articles[0]} /> : <></>}
+        {articles.length > 0 ? (
+          <FirstArticle article={articles[0]} main={true} />
+        ) : (
+          <></>
+        )}
       </div>
       <div className="rem-content">
         {articles

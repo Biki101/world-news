@@ -3,14 +3,20 @@
   grid-gap: 1rem;
   grid-template-areas: "img h4" "img span";
   text-align: justify;
+
+  h4 {
+    padding: 5px;
+  }
 }
 
 #foot-img {
   grid-area: img;
+  border: 3px solid black;
 }
 
 #foot-span {
   grid-area: span;
+  // padding: 5px;
 }
 
 #foot-h4 {

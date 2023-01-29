@@ -2,7 +2,7 @@ import React from "react";
 import HomeMainSection from "../../components/home-main-section/home-main-section";
 import WelcomeNews from "../../components/welcome-news/WelcomeNews";
 import "./homepage.styles.scss";
-import LatestArticle from "../../latest-article/LatestArticle";
+import LatestArticle from "../../components/latest-article/LatestArticle";
 
 const HomePage = () => {
   return (

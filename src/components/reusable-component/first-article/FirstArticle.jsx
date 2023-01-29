@@ -2,6 +2,8 @@ import React from "react";
 import "./first-article.scss";
 
 const FirstArticle = (props) => {
+  const main = props.main;
+  const description = props.article.abstract;
   const title = props.article.title;
   const dateString = props.article.published_date;
   const imgUrl = props.article.media[0];
@@ -23,13 +25,22 @@ const FirstArticle = (props) => {
   });
 
   return (
-    <div className="first-article-container">
+    <div
+      className={`${
+        main ? "main-first-article-container" : "first-article-container"
+      }`}
+    >
       <img
         id="first-article-img"
-        src={imgUrl["media-metadata"][0].url}
+        src={imgUrl["media-metadata"][1].url}
         alt="error loading"
       />
       <h4 id="foot-title">{title}</h4>
+      {main ? (
+        <div className="main-first-article-description">{description}</div>
+      ) : (
+        ""
+      )}
       <span id="foot-span">{newDate}</span>
     </div>
   );

@@ -1,13 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import MainSectionTitle from "../components/main-section-component/main-section-title/main-section.title";
-import PopularPost from "../components/popular-post/PopularPost";
-import FirstArticle from "../components/reusable-component/first-article/FirstArticle";
-import LatestArticleItems from "./latest-article-items/LatestArticleItems";
-import video from "../video/featured.mp4";
+import video from "../../video/featured.mp4";
 import "./latest-article.styles.scss";
 import EastIcon from "@mui/icons-material/East";
-import Tags from "../components/tags/Tags";
+import MainSectionTitle from "../main-section-component/main-section-title/main-section.title";
+import FirstArticle from "../reusable-component/first-article/FirstArticle";
+import Tags from "../tags/Tags";
 
 const LatestArticle = () => {
   const latestNews = useSelector((state) => state.popPopularPost.popularNews);
@@ -27,14 +25,16 @@ const LatestArticle = () => {
         <MainSectionTitle title="Featured" />
         <div className="featured-item">
           <div className="video">
-            <iframe
+            <video
               width="300"
               height="180"
               src={video}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Embedded youtube"
-            />
+              // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              // allowFullScreen
+              // title="Embedded youtube"
+              // sandbox
+              controls
+            ></video>
           </div>
           <div className="subscribe">
             <h3>Subscribe</h3>
@@ -42,7 +42,7 @@ const LatestArticle = () => {
               Get all latest content delivered to your email a few times a
               month.
             </p>
-            <div className="subscribe-mail">
+            <div className="subscribe-mail link">
               <input type="text" placeholder="Email" />
               <EastIcon className="subscribe-icon" />
             </div>
