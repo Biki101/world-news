@@ -7,6 +7,7 @@ import LatestArticleItems from "./latest-article-items/LatestArticleItems";
 import video from "../video/featured.mp4";
 import "./latest-article.styles.scss";
 import EastIcon from "@mui/icons-material/East";
+import Tags from "../components/tags/Tags";
 
 const LatestArticle = () => {
   const latestNews = useSelector((state) => state.popPopularPost.popularNews);
@@ -25,14 +26,16 @@ const LatestArticle = () => {
       <div className="featured">
         <MainSectionTitle title="Featured" />
         <div className="featured-item">
-          <iframe
-            width="300"
-            height="180"
-            src={video}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Embedded youtube"
-          />
+          <div className="video">
+            <iframe
+              width="300"
+              height="180"
+              src={video}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Embedded youtube"
+            />
+          </div>
           <div className="subscribe">
             <h3>Subscribe</h3>
             <p>
@@ -47,7 +50,16 @@ const LatestArticle = () => {
         </div>
         <div>
           <MainSectionTitle title="Tags" />
-          <div className="tags"></div>
+          <div className="tags">
+            <Tags tag="Fashion" />
+            <Tags tag="Sports" />
+            <Tags tag="Books" />
+            <Tags tag="Movies" />
+            <Tags tag="Global" />
+            <Tags tag="Politics" />
+            <Tags tag="Health" />
+            <Tags tag="Pandemic" />
+          </div>
         </div>
       </div>
     </div>
