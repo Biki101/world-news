@@ -2,6 +2,7 @@ import React from "react";
 import HomeMainSection from "../../components/home-main-section/home-main-section";
 import WelcomeNews from "../../components/welcome-news/WelcomeNews";
 import "./homepage.styles.scss";
+import LatestArticle from "../../latest-article/LatestArticle";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,10 @@ const HomePage = () => {
       <div className="container">
         <WelcomeNews />
         <HomeMainSection />
+        <div id="home-page-img" className="explore">
+          <span>Start Exploring</span>
+        </div>
+        <LatestArticle />
       </div>
     </div>
   );

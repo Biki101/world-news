@@ -1,0 +1,46 @@
+.latest-article-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+
+  #latest-articles-item {
+    margin: 10px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+.featured-item {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe {
+  background-color: rgb(211 21 21);
+  padding: 30px;
+  color: white;
+
+  .subscribe-mail {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .subscribe-mail input {
+    width: 80%;
+    border-style: none;
+    height: 30px;
+    padding: 25px;
+  }
+  .subscribe-icon {
+    flex-grow: 1;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    font-size: 50px;
+  }
+}

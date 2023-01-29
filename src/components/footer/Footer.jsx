@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./footer.styles.scss";
-import logo from "../../img/logo2.png";
+import logo from "../../img/logo.png";
 
 import { BsFacebook, BsPinterest, BsTwitter, BsYoutube } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
