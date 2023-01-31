@@ -3,12 +3,19 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import "./navigation.styles.scss";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "@mui/material";
 
 const Navigation = () => {
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = React.useState("/");
+  const navigate = useNavigate();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  React.useEffect(() => {
+    navigate(value);
+  }, [value]);
 
   return (
     <div className="nav-bar">
@@ -21,12 +28,12 @@ const Navigation = () => {
             indicatorColor="secondary"
             aria-label="secondary tabs example"
           >
-            <Tab value="one" label="Home" />
-            <Tab value="three" label="Global" />
-            <Tab value="two" label="Most popular" />
-            <Tab value="four" label="categories" />
-            <Tab value="six" label="About Us" />
-            <Tab value="seven" label="Contact US" />
+            <Tab value="/" label="Home" />
+            <Tab value="global" label="Global" />
+            <Tab value="popular" label="Most popular" />
+            <Tab value="categories" label="categories" />
+            <Tab value="about" label="About Us" />
+            <Tab value="contact" label="Contact US" />
           </Tabs>
         </Box>
       </div>
