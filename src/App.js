@@ -5,6 +5,10 @@ import Footer from "./components/footer/Footer";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HomePage from "./pages/home-page/HomePage";
 import SearchBar from "./components/search-section/SearchBar";
+import { Route, Routes } from "react-router-dom";
+import AboutPage from "./pages/About-Page/AboutPage";
+import ContactPage from "./pages/contact-page/Contact-page";
+// import { BreadCrumbProvider } from "./context/BreadCrumbcontext";
 
 function App() {
   const theme = createTheme({
@@ -21,10 +25,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        {/* <BreadCrumbProvider> */}
         <NavBar />
         <SearchBar />
-        <HomePage />
+        <Routes>
+          <Route path="" element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Routes>
         <Footer />
+        {/* </BreadCrumbProvider> */}
       </div>
     </ThemeProvider>
   );

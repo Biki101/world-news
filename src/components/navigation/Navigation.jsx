@@ -12,23 +12,24 @@ const Navigation = () => {
 
   return (
     <div className="nav-bar">
-      <Box sx={{ width: "100%" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          textColor="primary"
-          indicatorColor="secondary"
-          aria-label="secondary tabs example"
-        >
-          <Tab value="one" label="Home" />
-          <Tab value="three" label="Global" />
-          <Tab value="two" label="Most popular" />
-          <Tab value="four" label="Sports" />
-          <Tab value="five" label="Celibrities" />
-          <Tab value="six" label="Movie" />
-          <Tab value="seven" label="Books" />
-        </Tabs>
-      </Box>
+      <div>
+        <Box sx={{ width: "100%" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            textColor="primary"
+            indicatorColor="secondary"
+            aria-label="secondary tabs example"
+          >
+            <Tab value="one" label="Home" />
+            <Tab value="three" label="Global" />
+            <Tab value="two" label="Most popular" />
+            <Tab value="four" label="categories" />
+            <Tab value="six" label="About Us" />
+            <Tab value="seven" label="Contact US" />
+          </Tabs>
+        </Box>
+      </div>
     </div>
   );
 };

@@ -5,12 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./redux/store/store";
+import { BrowserRouter } from "react-router-dom";
+import { BreadCrumbProvider } from "./context/BreadCrumbcontext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BreadCrumbProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </BreadCrumbProvider>
     </Provider>
   </React.StrictMode>
 );

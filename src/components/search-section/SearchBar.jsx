@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./search-bar.styles.scss";
 // MUI
-import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
-import GrainIcon from "@mui/icons-material/Grain";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import { BreadCrumbContext } from "../../context/BreadCrumbcontext";
+
+import { returnRouteIcon, routeIcon } from "./routeIcon";
 
 const SearchBar = () => {
+  const { route } = useContext(BreadCrumbContext);
+  console.log(route);
+
+  var res = route.split("/");
+  console.log(res);
+  // Output: ["category", "global"]
+
   const handleClick = (event) => {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
@@ -33,22 +40,18 @@ const SearchBar = () => {
               />
               WORLD NEWS
             </Link>
-            <Link
-              underline="hover"
-              sx={{ display: "flex", alignItems: "center" }}
-              color="inherit"
-              href="/material-ui/getting-started/installation/"
-            >
-              <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-              Core
-            </Link>
-            <Typography
-              sx={{ display: "flex", alignItems: "center" }}
-              color="text.primary"
-            >
-              <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-              Breadcrumb
-            </Typography>
+            {res.map((item, indx) => (
+              <Link
+                key={indx}
+                underline="hover"
+                sx={{ display: "flex", alignItems: "center" }}
+                color="inherit"
+                href="/material-ui/getting-started/installation/"
+              >
+                <div>{returnRouteIcon(item)}</div>
+                {item}
+              </Link>
+            ))}
           </Breadcrumbs>
         </div>
         {/* search bar  */}

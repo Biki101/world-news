@@ -1,5 +1,13 @@
 .nav-bar {
-  border: 2px solid black;
+  // border: 2px solid black;
   margin-top: 20px;
   padding: 5px;
+  border-bottom: 3px solid black;
+}
+
+.nav-bar div {
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
