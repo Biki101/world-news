@@ -38,10 +38,10 @@ const AboutPage = () => {
         <div className="our-location">
           <div className="gmap_canvas">
             <iframe
-              width="300"
-              height="400"
+              width="350"
+              height="500"
               id="gmap_canvas"
-              src="https://maps.google.com/maps?q=Suryabinayak%20Bhaktapur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Bhaktapur Nepal&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
           </div>
         </div>

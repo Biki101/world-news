@@ -11,10 +11,8 @@ import { returnRouteIcon, routeIcon } from "./routeIcon";
 
 const SearchBar = () => {
   const { route } = useContext(BreadCrumbContext);
-  console.log(route);
 
   var res = route.split("/");
-  console.log(res);
   // Output: ["category", "global"]
 
   const handleClick = (event) => {
@@ -56,7 +54,7 @@ const SearchBar = () => {
         </div>
         {/* search bar  */}
         <form className="search-bar">
-          <input type="Search" placeholder="What can I help you with today?" />
+          <input type="search" placeholder="What can I help you with today?" />
           <div className="search-icon link">
             <TravelExploreIcon />
           </div>

@@ -1,0 +1,47 @@
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+
+  .our-location {
+    // border: 2px solid black;
+    align-self: center;
+
+    iframe {
+      border: none;
+    }
+  }
+  .contact-item {
+    flex-grow: 1;
+    max-width: 500px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .contact-input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label:hover {
+          cursor: pointer;
+        }
+
+        input {
+          padding: 0.7rem;
+        }
+
+        textarea {
+          padding: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+.submit-button {
+  margin-top: 20px;
+}
