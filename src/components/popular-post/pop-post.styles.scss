@@ -5,13 +5,15 @@
   text-align: justify;
 
   h4 {
-    padding: 5px;
+    // padding: 5px;
   }
 }
 
 #foot-img {
   grid-area: img;
   border: 3px solid black;
+  max-width: 80px;
+  height: auto;
 }
 
 #foot-span {
@@ -21,4 +23,5 @@
 
 #foot-h4 {
   grid-area: h4;
+  // grid-column: ;
 }

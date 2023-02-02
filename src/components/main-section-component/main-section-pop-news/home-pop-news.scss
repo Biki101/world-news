@@ -20,6 +20,11 @@
 
     img {
       border: 2px solid black;
+      max-width: 80px;
+    }
+    p {
+      flex-grow: 1;
+      text-align: justify;
     }
   }
 }

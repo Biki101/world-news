@@ -1,6 +1,8 @@
 import React from "react";
 import "./first-article.scss";
 
+import logo from "../../../img/logo.png";
+
 const FirstArticle = (props) => {
   const main = props.main;
   const description = props.article.abstract;
@@ -30,11 +32,15 @@ const FirstArticle = (props) => {
         main ? "main-first-article-container" : "first-article-container"
       }`}
     >
-      <img
-        id="first-article-img"
-        src={imgUrl["media-metadata"][1].url}
-        alt="error loading"
-      />
+      {imgUrl ? (
+        <img
+          id="first-article-img"
+          src={imgUrl["media-metadata"][1].url}
+          alt="error loading"
+        />
+      ) : (
+        <img id="first-article-img" src={logo} alt="error loading" />
+      )}
       <h4 id="foot-title">{title}</h4>
       {main ? (
         <div className="main-first-article-description">{description}</div>

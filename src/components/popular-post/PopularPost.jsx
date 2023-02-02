@@ -1,6 +1,8 @@
 import React from "react";
 import "./pop-post.styles.scss";
 
+import logo from "../.../../../img/logo.png";
+
 const PopularPost = (props) => {
   const title = props.item.title;
   const dateString = props.item.published_date;
@@ -23,14 +25,24 @@ const PopularPost = (props) => {
   });
 
   return (
-    <div className="popular-post">
-      <img
-        id="foot-img"
-        src={imgUrl["media-metadata"][0].url}
-        alt="error loading"
-      />
-      <h4 id="foot-title">{title}</h4>
-      <span id="foot-span">{newDate}</span>
+    <div>
+      {props.item ? (
+        <div className="popular-post">
+          {imgUrl ? (
+            <img
+              id="foot-img"
+              src={imgUrl["media-metadata"][0].url}
+              alt="error loading"
+            />
+          ) : (
+            <img id="foot-img" src={logo} alt="error loading" />
+          )}
+          <h4 id="foot-title">{title}</h4>
+          <span id="foot-span">{newDate}</span>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

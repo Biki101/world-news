@@ -58,11 +58,7 @@ const ContactPage = () => {
             </div>
           </form>
           <div className="submit-button">
-            <Button
-              variant="contained"
-              color="secondary"
-              endIcon={<SendIcon />}
-            >
+            <Button variant="contained" color="success" endIcon={<SendIcon />}>
               Send
             </Button>
           </div>
