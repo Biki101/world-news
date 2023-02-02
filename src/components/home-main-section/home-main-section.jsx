@@ -17,12 +17,6 @@ const HomeMainSection = () => {
       <div className="main-section-item" id="main-sports">
         <MainSectionComponent title="Sports" />
       </div>
-      {/* <div className="main-section-item" id="main-intro-img">
-        img
-      </div>
-      <div className="main-section-item" id="stay-connected">
-        stay connected
-      </div> */}
     </div>
   );
 };

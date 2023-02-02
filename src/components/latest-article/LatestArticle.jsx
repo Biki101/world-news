@@ -8,7 +8,7 @@ import FirstArticle from "../reusable-component/first-article/FirstArticle";
 import Tags from "../tags/Tags";
 
 const LatestArticle = () => {
-  const latestNews = useSelector((state) => state.popPopularPost.popularNews);
+  const latestNews = useSelector((state) => state.popularPost.popularNews);
   return (
     <div className="latest-article-container">
       <div className="latest-article">

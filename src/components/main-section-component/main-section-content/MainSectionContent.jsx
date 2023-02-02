@@ -5,7 +5,7 @@ import FirstArticle from "../../reusable-component/first-article/FirstArticle";
 import "./main-section-content.styles.scss";
 
 const MainSectionContent = (props) => {
-  const articles = useSelector((state) => state.popPopularPost.popularNews);
+  const articles = useSelector((state) => state.popularPost.popularNews);
   return (
     <div className="main-section-content-container">
       <div className="first-content">

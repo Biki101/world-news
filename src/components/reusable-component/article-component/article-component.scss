@@ -1,0 +1,23 @@
+.article-component {
+  display: flex;
+  border: 3px solid black;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  height: 100%;
+  gap: 5px;
+  img {
+    width: 100%;
+    flex-grow: 1;
+    max-height: 195px;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 0.7rem;
+  }
+}

@@ -21,7 +21,7 @@ const Footer = () => {
       });
   }, []);
 
-  const popNews = useSelector((state) => state.popPopularPost.popularNews);
+  const popNews = useSelector((state) => state.popularPost.popularNews);
 
   return (
     <footer className="footer">

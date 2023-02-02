@@ -6,7 +6,7 @@ import logo from "../../../img/logo.png";
 import StayConnected from "../../stay-connected/StayConnected";
 
 const HomePopNews = () => {
-  const article = useSelector((state) => state.popPopularPost.popularNews);
+  const article = useSelector((state) => state.popularPost.popularNews);
   return (
     <div className="home-pop-container">
       <ul>
