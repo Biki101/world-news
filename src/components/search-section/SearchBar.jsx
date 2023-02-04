@@ -7,7 +7,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import { BreadCrumbContext } from "../../context/BreadCrumbcontext";
 
-import { returnRouteIcon, routeIcon } from "./routeIcon";
+import { returnRouteIcon } from "./routeIcon";
 
 const SearchBar = () => {
   const { route } = useContext(BreadCrumbContext);
@@ -17,7 +17,7 @@ const SearchBar = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    console.info("You clicked a breadcrumb.");
+    // console.info("You clicked a breadcrumb.");
   };
 
   return (

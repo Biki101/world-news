@@ -3,7 +3,6 @@ import FirstArticle from "../../components/reusable-component/first-article/Firs
 import "./latest-article-items.styles.scss";
 
 const LatestArticleItems = (props) => {
-  console.log(props);
   return (
     <div className="latest-article-item-container">
       <FirstArticle article={props.item} />

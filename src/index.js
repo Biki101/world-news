@@ -7,15 +7,18 @@ import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import { BrowserRouter } from "react-router-dom";
 import { BreadCrumbProvider } from "./context/BreadCrumbcontext";
+import { CategoryContextProvider } from "./context/categoryContext/CategoryContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BreadCrumbProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <CategoryContextProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CategoryContextProvider>
       </BreadCrumbProvider>
     </Provider>
   </React.StrictMode>

@@ -1,0 +1,15 @@
+.category-page h1 {
+  margin-bottom: 30px;
+}
+.category-page {
+  display: flex;
+  flex-direction: column;
+
+  .category-content {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    // width: 100%;
+    gap: 20px;
+  }
+}

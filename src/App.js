@@ -8,6 +8,8 @@ import { Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/About-Page/AboutPage";
 import ContactPage from "./pages/contact-page/Contact-page";
 import GlobalPage from "./pages/global-page/GlobalPage";
+import PopularPage from "./pages/Popular-page/PopularPage";
+import CategoriesPage from "./pages/categories-page/CategoriesPage";
 // import { BreadCrumbProvider } from "./context/BreadCrumbcontext";
 
 function App() {
@@ -25,7 +27,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        {/* <BreadCrumbProvider> */}
         <NavBar />
         <SearchBar />
         <Routes>
@@ -33,9 +34,10 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="global" element={<GlobalPage />} />
+          <Route path="popular" element={<PopularPage />} />
+          <Route path="categories" element={<CategoriesPage />} />
         </Routes>
         <Footer />
-        {/* </BreadCrumbProvider> */}
       </div>
     </ThemeProvider>
   );

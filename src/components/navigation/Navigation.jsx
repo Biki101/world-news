@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 // import { Link } from "@mui/material";
 
 const Navigation = () => {
-  const [value, setValue] = React.useState("/");
+  const [value, setValue] = useState("/");
   const navigate = useNavigate();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     navigate(value);
   }, [value]);
 

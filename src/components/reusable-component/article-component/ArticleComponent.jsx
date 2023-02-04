@@ -4,8 +4,6 @@ import "./article-component.scss";
 const ArticleComponent = (props) => {
   const article = props.item;
 
-  console.log(article);
-
   return (
     <div>
       <div className="article-component">

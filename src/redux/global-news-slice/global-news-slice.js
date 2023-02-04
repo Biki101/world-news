@@ -10,7 +10,6 @@ export const globalNewsSlice = createSlice({
   reducers: {
     populateGlobalArticle: (state, action) => {
       state.globalNews = action.payload;
-      // console.log(state.globalNews);
     },
   },
 });

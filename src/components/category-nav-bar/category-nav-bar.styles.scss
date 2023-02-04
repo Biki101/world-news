@@ -1,0 +1,25 @@
+.category-navbar-section {
+  margin-top: 20px;
+  // border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.category-navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.cat-nav-item {
+  padding: 5px;
+}
+
+.cat-nav-item:hover {
+  cursor: pointer;
+  font-weight: bolder;
+}

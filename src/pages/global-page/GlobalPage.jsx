@@ -4,10 +4,7 @@ import { BreadCrumbContext } from "../../context/BreadCrumbcontext";
 import PageComponent from "../../components/page-component/PageComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { populateGlobalArticle } from "../../redux/global-news-slice/global-news-slice";
-import HomePopNews from "../../components/main-section-component/main-section-pop-news/HomePopNews";
-import MainSectionTitle from "../../components/main-section-component/main-section-title/main-section.title";
-import FirstArticle from "../../components/reusable-component/first-article/FirstArticle";
-import ArticleComponent from "../../components/reusable-component/article-component/ArticleComponent";
+import PageMainSection from "../../components/page-main-section-component/PageMainSection";
 
 const GlobalPage = () => {
   const { setRoute } = useContext(BreadCrumbContext);
@@ -20,31 +17,16 @@ const GlobalPage = () => {
     )
       .then((res) => res.json())
       .then((data) => dispatch(populateGlobalArticle(data.results)));
-  }, []);
+  });
 
   const globalArticle = useSelector((state) => state.globalPost.globalNews);
-  console.log(globalArticle);
 
   return (
     <div className="container global-page">
       <h1>Global News</h1>
       {globalArticle.length ? <PageComponent articles={globalArticle} /> : ""}
 
-      <div className="global-main-section">
-        <div className="" id="global-main-content">
-          {globalArticle.length
-            ? globalArticle
-                .filter((item, indx) => indx < 18 && indx > 6)
-                .map((item, indx) => (
-                  <ArticleComponent key={indx} item={item} />
-                ))
-            : ""}
-        </div>
-        <div id="global-pop-content">
-          <MainSectionTitle title="Popular News" />
-          <HomePopNews />
-        </div>
-      </div>
+      {globalArticle.length ? <PageMainSection items={globalArticle} /> : ""}
     </div>
   );
 };

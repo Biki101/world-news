@@ -2,9 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-
   list-style: none;
-
   --primary: rgb(36, 200, 36);
 }
 
@@ -23,7 +21,7 @@ body {
 }
 .link:hover {
   color: var(--primary);
-  transition: all 1s ease-in-out 0.2s;
+  transition: all 0.7s ease-in-out 0.2s;
   text-decoration: underline;
 }
 
