@@ -9,9 +9,17 @@ const WelcomeNews = () => {
       "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
     )
       .then((res) => res.json())
-      .then((data) => setWelcomeData(data.results));
+      .then((data) => {
+        let a = [];
+        for (let i = 0; a.length < 4; i++) {
+          if (data.results[i].multimedia !== null) {
+            a.push(data.results[i]);
+          }
+        }
+        setWelcomeData(a);
+      });
   }, []);
-  console.log(welcomeData);
+
   return (
     <>
       {welcomeData.length ? (

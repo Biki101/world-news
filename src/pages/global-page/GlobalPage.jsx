@@ -12,11 +12,11 @@ const GlobalPage = () => {
 
   useEffect(() => {
     setRoute("Home/Global");
-    fetch(
-      "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
-    )
-      .then((res) => res.json())
-      .then((data) => dispatch(populateGlobalArticle(data.results)));
+    // fetch(
+    //   "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => dispatch(populateGlobalArticle(data.results)));
   });
 
   const globalArticle = useSelector((state) => state.globalPost.globalNews);

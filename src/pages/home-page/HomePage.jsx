@@ -9,7 +9,7 @@ const HomePage = () => {
   const { setRoute } = useContext(BreadCrumbContext);
   useEffect(() => {
     setRoute("Home");
-  }, []);
+  }, [setRoute]);
 
   return (
     <div className="homepage-container">
