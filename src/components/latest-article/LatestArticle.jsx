@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import video from "../../video/featured.mp4";
 import "./latest-article.styles.scss";
@@ -8,19 +8,34 @@ import FirstArticle from "../reusable-component/first-article/FirstArticle";
 import Tags from "../tags/Tags";
 
 const LatestArticle = () => {
-  const latestNews = useSelector((state) => state.popularPost.popularNews);
+  const [latestNews, setLatestNews] = useState([]);
+  useEffect(() => {
+    fetch(
+      "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
+    )
+      .then((res) => res.json())
+      .then((data) => setLatestNews(data.results));
+  }, []);
+  // const latestNews = useSelector((state) => state.popularPost.popularNews);
+  console.log(latestNews);
   return (
     <div className="latest-article-container">
-      <div className="latest-article">
-        <MainSectionTitle title="Latest Articles" />
-        <div id="latest-articles-item">
-          {latestNews.length
-            ? latestNews
-                .slice(0, 6)
-                .map((item, indx) => <FirstArticle key={indx} article={item} />)
-            : ""}
+      {latestNews ? (
+        <div className="latest-article">
+          <MainSectionTitle title="Latest Articles" />
+          <div id="latest-articles-item">
+            {latestNews.length
+              ? latestNews
+                  .slice(0, 6)
+                  .map((item, indx) => (
+                    <FirstArticle key={indx} article={item} />
+                  ))
+              : ""}
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
       <div className="featured">
         <MainSectionTitle title="Featured" />
         <div className="featured-item">

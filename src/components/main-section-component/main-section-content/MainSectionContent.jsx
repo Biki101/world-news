@@ -1,27 +1,49 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PopularPost from "../../popular-post/PopularPost";
 import FirstArticle from "../../reusable-component/first-article/FirstArticle";
 import "./main-section-content.styles.scss";
 
 const MainSectionContent = (props) => {
-  const articles = useSelector((state) => state.popularPost.popularNews);
+  const articles = useSelector((state) => {
+    switch (props.type) {
+      case "movies":
+        return state.homeNews.movieNews;
+      case "sports":
+        return state.homeNews.sportsNews;
+      case "world":
+        return state.globalPost.globalNews;
+      default:
+        return state.globalPost.globalNews;
+    }
+  });
+  console.log(articles);
+
+  const sendArticle = () =>
+    articles.filter((item, index) => item.multimedia !== null);
+
   return (
     <div className="main-section-content-container">
-      <div className="first-content">
-        {articles.length > 0 ? (
-          <FirstArticle article={articles[0]} main={true} />
-        ) : (
-          <></>
-        )}
-      </div>
-      <div className="rem-content">
-        {articles
-          .filter((item, index) => index < 4)
-          .map((item, index) => (
-            <PopularPost key={index} item={item} />
-          ))}
-      </div>
+      {articles ? (
+        <>
+          <div className="first-content">
+            {articles.length ? (
+              <FirstArticle article={articles[0]} main={true} post={true} />
+            ) : (
+              <></>
+            )}
+          </div>
+          <div className="rem-content">
+            {articles
+              .filter((item, index) => 0 < index && index < 5)
+              .map((item, index) => (
+                <PopularPost post={true} key={index} item={item} />
+              ))}
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

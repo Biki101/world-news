@@ -6,7 +6,9 @@ import logo from "../.../../../img/logo.png";
 const PopularPost = (props) => {
   const title = props.item.title;
   const dateString = props.item.published_date;
-  const imgUrl = props.item.media[0];
+  const imgUrl = props.post
+    ? props.item.multimedia[1].url
+    : props.item.media[0]["media-metadata"][2].url;
 
   //converting date
   const dateArray = dateString.split("-");
@@ -29,11 +31,7 @@ const PopularPost = (props) => {
       {props.item ? (
         <div className="popular-post">
           {imgUrl ? (
-            <img
-              id="foot-img"
-              src={imgUrl["media-metadata"][0].url}
-              alt="error loading"
-            />
+            <img id="foot-img" src={imgUrl} alt="error loading" />
           ) : (
             <img id="foot-img" src={logo} alt="error loading" />
           )}

@@ -3,7 +3,7 @@ import "./global-page.styles.scss";
 import { BreadCrumbContext } from "../../context/BreadCrumbcontext";
 import PageComponent from "../../components/page-component/PageComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { populateGlobalArticle } from "../../redux/global-news-slice/global-news-slice";
+// import { populateGlobalArticle } from "../../redux/global-news-slice/global-news-slice";
 import PageMainSection from "../../components/page-main-section-component/PageMainSection";
 
 const GlobalPage = () => {

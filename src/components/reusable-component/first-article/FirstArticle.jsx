@@ -4,11 +4,12 @@ import "./first-article.scss";
 import logo from "../../../img/logo.png";
 
 const FirstArticle = (props) => {
+  console.log(props);
   const main = props.main;
   const description = props.article.abstract;
   const title = props.article.title;
   const dateString = props.article.published_date;
-  const imgUrl = props.article.media[0];
+  const imgUrl = props.article.multimedia[1].url;
 
   //converting date
   const dateArray = dateString.split("-");
@@ -33,11 +34,7 @@ const FirstArticle = (props) => {
       }`}
     >
       {imgUrl ? (
-        <img
-          id="first-article-img"
-          src={imgUrl["media-metadata"][1].url}
-          alt="error loading"
-        />
+        <img id="first-article-img" src={imgUrl} alt="error loading" />
       ) : (
         <img id="first-article-img" src={logo} alt="error loading" />
       )}
