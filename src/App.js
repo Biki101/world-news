@@ -34,15 +34,15 @@ function App() {
 
   useEffect(() => {
     try {
-      const fetchData1 = async () => {
+      setTimeout(async () => {
         const res = await fetch(
           "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
         );
         const json = await res.json();
         dispatch(populateGlobalArticle(json.results));
-      };
+      }, 6000);
 
-      const fetchData2 = setTimeout(async () => {
+      setTimeout(async () => {
         const res = await fetch(
           "https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
         );
@@ -50,20 +50,17 @@ function App() {
         dispatch(populateSportsArticle(json.results));
       }, 6000);
 
-      const fetchData3 = setTimeout(async () => {
+      setTimeout(async () => {
         const res = await fetch(
           "https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
         );
         const json = await res.json();
         dispatch(populateMovieArticle(json.results));
       }, 6000);
-      fetchData1();
-      fetchData2();
-      fetchData3();
     } catch (error) {
-      console.log(error.message);
+      alert("Server busy please try after sometime.");
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={theme}>

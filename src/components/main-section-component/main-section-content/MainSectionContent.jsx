@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import PopularPost from "../../popular-post/PopularPost";
 import FirstArticle from "../../reusable-component/first-article/FirstArticle";
 import "./main-section-content.styles.scss";
@@ -17,10 +17,6 @@ const MainSectionContent = (props) => {
         return state.globalPost.globalNews;
     }
   });
-  console.log(articles);
-
-  const sendArticle = () =>
-    articles.filter((item, index) => item.multimedia !== null);
 
   return (
     <div className="main-section-content-container">

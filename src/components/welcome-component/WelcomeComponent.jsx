@@ -6,7 +6,6 @@ const WelcomeComponent = (props) => {
   const title = item.subsection;
   const byline = item.byline;
   const imageUrl = item.multimedia[1].url;
-  // console.log(imageUrl);
   return (
     <div
       className="welcome-component"

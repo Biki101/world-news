@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import video from "../../video/featured.mp4";
 import "./latest-article.styles.scss";
 import EastIcon from "@mui/icons-material/East";
@@ -16,8 +15,6 @@ const LatestArticle = () => {
       .then((res) => res.json())
       .then((data) => setLatestNews(data.results));
   }, []);
-  // const latestNews = useSelector((state) => state.popularPost.popularNews);
-  console.log(latestNews);
   return (
     <div className="latest-article-container">
       {latestNews ? (

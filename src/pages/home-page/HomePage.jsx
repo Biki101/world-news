@@ -14,6 +14,7 @@ const HomePage = () => {
   return (
     <div className="homepage-container">
       <div className="container">
+        <h1>Breaking News</h1>
         <WelcomeNews />
         <HomeMainSection />
         <div id="home-page-img" className="explore">

@@ -1,62 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import MainSectionComponent from "../main-section-component/MainSectionComponent";
 import "./home-main-section.styles.scss";
-import { populateGlobalArticle } from "../../redux/global-news-slice/global-news-slice";
-import {
-  populateMovieArticle,
-  populateSportsArticle,
-} from "../../redux/home-news-slice/home-news-slice";
+
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
+export const CircularIndeterminate = () => {
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CircularProgress />
+    </Box>
+  );
+};
+
 const HomeMainSection = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const fetchData1 = async () => {
-  //     const res = await fetch(
-  //       "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
-  //     );
-  //     const json = await res.json();
-  //     dispatch(populateGlobalArticle(json.results));
-  //   };
-
-  //   const fetchData2 = async () => {
-  //     const res = await fetch(
-  //       "https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
-  //     );
-  //     const json = await res.json();
-  //     dispatch(populateSportsArticle(json.results));
-  //   };
-
-  //   const fetchData3 = async () => {
-  //     const res = await fetch(
-  //       "https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=d9XpTjsFp87bwBGJw7Qm9oUGikpKt1GZ"
-  //     );
-  //     const json = await res.json();
-  //     dispatch(populateMovieArticle(json.results));
-  //   };
-  //   fetchData1();
-  //   fetchData2();
-  //   fetchData3();
-  // });
-
-  // setGlobalData(useSelector((state) => state.globalPost.globalNews));
-  // setSportsData(useSelector((state) => state.homeNews.sportsNews));
-  // setMoviesData(useSelector((state) => state.globalPost.movieNews));
+  const global = useSelector((state) => state.globalPost.globalNews);
+  const movies = useSelector((state) => state.homeNews.movieNews);
+  const sports = useSelector((state) => state.homeNews.sportsNews);
 
   return (
-    <div className="main-section-container">
-      <div className="main-section-item" id="main-global">
-        <MainSectionComponent articlesType="world" title="Global News" />
-      </div>
-      <div className="main-section-item" id="main-popular">
-        <MainSectionComponent articlesType="world" title="Popular News" />
-      </div>
-      <div className="main-section-item" id="main-books">
-        <MainSectionComponent articlesType="movies" title="Movies" />
-      </div>
-      <div className="main-section-item" id="main-sports">
-        <MainSectionComponent articlesType="sports" title="Sports" />
-      </div>
-    </div>
+    <>
+      {global.length !== 0 && movies.length !== 0 && sports.length !== 0 ? (
+        <div className="main-section-container">
+          <div className="main-section-item" id="main-global">
+            <MainSectionComponent articlesType="world" title="Global News" />
+          </div>
+          <div className="main-section-item" id="main-popular">
+            <MainSectionComponent articlesType="world" title="Popular News" />
+          </div>
+          <div className="main-section-item" id="main-books">
+            <MainSectionComponent articlesType="movies" title="Movies" />
+          </div>
+          <div className="main-section-item" id="main-sports">
+            <MainSectionComponent articlesType="sports" title="Sports" />
+          </div>
+        </div>
+      ) : (
+        <div className="loading">
+          <CircularIndeterminate />
+          <span>Please wait...</span>
+        </div>
+      )}
+    </>
   );
 };
 

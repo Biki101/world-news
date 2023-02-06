@@ -9,6 +9,10 @@ const ContactPage = () => {
   useEffect(() => {
     setRoute("Home/Contact");
   }, []);
+  const handleAlert = (event) => {
+    event.preventDefault();
+    alert("Message Sent");
+  };
   return (
     <div className="container">
       <h1>Contact Us</h1>
@@ -56,12 +60,16 @@ const ContactPage = () => {
                 required
               />
             </div>
+            <div className="submit-button" onClick={handleAlert}>
+              <Button
+                variant="contained"
+                color="success"
+                endIcon={<SendIcon />}
+              >
+                Send
+              </Button>
+            </div>
           </form>
-          <div className="submit-button">
-            <Button variant="contained" color="success" endIcon={<SendIcon />}>
-              Send
-            </Button>
-          </div>
         </div>
         <div className="our-location">
           <div className="gmap_canvas">
@@ -69,6 +77,7 @@ const ContactPage = () => {
               width="350"
               height="500"
               id="gmap_canvas"
+              title="our-location"
               src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Bhaktapur Nepal&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
           </div>

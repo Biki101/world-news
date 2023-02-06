@@ -19,7 +19,6 @@ const PopularPage = () => {
   });
 
   const popularNews = useSelector((state) => state.popularNews.popularNews);
-  // console.log(popularNews);
 
   return (
     <div className="container popular-page">

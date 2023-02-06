@@ -3,10 +3,6 @@
   display: grid;
   gap: 20px;
   grid-template-areas: "global global popular" "sports sports popular" "books books popular";
-
-  .main-section-item {
-    // border: 2px solid black;
-  }
 }
 
 #main-global {
@@ -23,4 +19,14 @@
 
 #main-books {
   grid-area: books;
+}
+
+.loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  height: 100px;
+  gap: 20px;
 }

@@ -4,7 +4,6 @@ import "./first-article.scss";
 import logo from "../../../img/logo.png";
 
 const FirstArticle = (props) => {
-  console.log(props);
   const main = props.main;
   const description = props.article.abstract;
   const title = props.article.title;

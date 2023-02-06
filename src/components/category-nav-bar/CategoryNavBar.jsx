@@ -3,7 +3,7 @@ import { CategoryContext } from "../../context/categoryContext/CategoryContext";
 import "./category-nav-bar.styles.scss";
 
 const CategoryNavBar = () => {
-  const { route, setRoute } = useContext(CategoryContext);
+  const { setRoute } = useContext(CategoryContext);
   const handleTechnologyClick = () => {
     setRoute("technology");
   };
