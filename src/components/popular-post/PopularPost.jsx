@@ -4,11 +4,18 @@ import "./pop-post.styles.scss";
 import logo from "../.../../../img/logo.png";
 
 const PopularPost = (props) => {
+  console.log(props);
   const title = props.item.title;
   const dateString = props.item.published_date;
-  const imgUrl = props.post
-    ? props.item.multimedia[1].url
-    : props.item.media[0]["media-metadata"][2].url;
+  // const imgUrl = props.post
+  //   ? props.item.multimedia[1].url
+  //   : props.item.media[0]["media-metadata"][2].url;
+
+  const imgUrl = !props.post
+    ? props.item.media.length
+      ? props.item.media[0]["media-metadata"][2].url
+      : logo
+    : props.item.multimedia[1].url;
 
   //converting date
   const dateArray = dateString.split("-");
